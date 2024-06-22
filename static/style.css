@@ -1,0 +1,39 @@
+#chat-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+#chatbox {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 400px;
+    overflow-y: scroll;
+}
+#chatlogs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#chatlogs div {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+form {
+    display: flex;
+}
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}

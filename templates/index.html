@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chatbox">
+            <div id="chatlogs"></div>
+        </div>
+        <form id="chat-form">
+            <input type="text" id="user_input" autocomplete="off" placeholder="Type your message here...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#chat-form').on('submit', function(e){
+                e.preventDefault();
+                let userInput = $('#user_input').val();
+                if(userInput.trim() !== ""){
+                    $('#chatlogs').append(`<div><strong>You:</strong> ${userInput}</div>`);
+                    $('#user_input').val('');
+                    $.ajax({
+                        url: '/get_response',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ user_input: userInput }),
+                        success: function(data){
+                            $('#chatlogs').append(`<div><strong>Hegemon:</strong> ${data.response}</div>`);
+                        },
+                        error: function(err){
+                            console.log(err);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
