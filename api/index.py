@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify
-import hegemon_chatbot
+import hegemon_chatbot as hegemon_chatbot
 
 app = Flask(__name__)
 
