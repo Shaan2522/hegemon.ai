@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Clone</title>
+    <script src="https://kit.fontawesome.com/72215895a8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="section">
+       <ul class="section_item">
+       <p><a href="#">+new chat </a></p>
+       <p><a href="#">history</a></p>
+    <p><a href="#">discover</a></p>
+       <p><a href="#">profile</a></p>
+    </ul>
+ 
+    </div>
+    <div class="container">
+       
+        <main class="chat-area" id="chat-area">
+            <div class="message_bot">Hello! Hegemon here. Wanna ask something?</div>
+        </main>
+        <footer class="input-area">
+            <input type="text" id="user-input" placeholder="Message Hegemon">
+            <button class="round-button" onclick="sendMessage()"><img src="186407_arrow_up_icon.png" class="upicon"></button>
+        </footer>
+    </div>
+    <script>
+         document.getElementById('user-input').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+        function sendMessage() {
+            const userInput = document.getElementById('user-input');
+            const message = userInput.value.trim();
+            if (message) {
+                const messageContainer = document.createElement('div');
+                messageContainer.className = 'message user';
+                messageContainer.textContent = message;
+
+                const chatArea = document.getElementById('chat-area');
+                chatArea.appendChild(messageContainer);
+
+                userInput.value = '';
+                chatArea.scrollTop = chatArea.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
