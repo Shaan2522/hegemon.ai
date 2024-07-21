@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def landing():
-    return render_template('landingpage.html')
-
-@app.route('/index')
-def index():
     return render_template('index.html')
+
+@app.route('/chat_page')
+def chat_page():
+    return render_template('chat_page.html')
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -17,7 +17,7 @@ def login():
     password = request.form['password']
     # Implement your authentication logic here
     # For now, we'll just redirect to index.html
-    return redirect(url_for('index'))
+    return redirect(url_for('chat_page'))
 
 @app.route('/signup', methods=['POST'])
 def signup():
@@ -25,7 +25,7 @@ def signup():
     password = request.form['password']
     # Implement your signup logic here
     # For now, we'll just redirect to index.html
-    return redirect(url_for('index'))
+    return redirect(url_for('chat_page'))
 
 @app.route('/get_response', methods=['POST'])
 def get_response():
