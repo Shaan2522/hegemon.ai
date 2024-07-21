@@ -75,7 +75,7 @@ body {
 }
 
 .round-button:hover {
-    background-color: #2d2f9b;
+    background-color: #00012e;
 }
 
 footer {
@@ -99,7 +99,7 @@ footer {
 }
 
 .modal-content {
-    background-color: #2d2f9b;
+    background-color: #00012e;
     margin: 10% auto;
     padding: 30px;
     width: 80%;
@@ -155,25 +155,27 @@ button[type="button"] {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     font-size: 14px;
+    color: #00012e;
 }
 
 button[type="submit"] {
-    background: linear-gradient(45deg , #2d2f9b, #D3D3D3);
-    color:white;
+    background: linear-gradient(45deg , #00012e, #D3D3D3);
+    color:#00012e;
     margin-bottom: 10px;
 }
 
 button[type="submit"]:hover {
-    background: linear-gradient(45deg , #D3D3D3 ,#2d2f9b);
+    background: linear-gradient(45deg , #D3D3D3 ,#00012e);
     transform: scale(1.05);
 }
 
 button[type="button"] {
-    background: linear-gradient(45deg , #2d2f9b, #D3D3D3);
-    color:#ffffff;
+    background: linear-gradient(45deg , #00012e, #D3D3D3);
+    color:#00012e;
+    margin-bottom: 10px;
 }
 
 button[type="button"]:hover {
-    background: linear-gradient(45deg , #D3D3D3 ,#2d2f9b);
+    background: linear-gradient(45deg , #D3D3D3 ,#00012e);
     transform: scale(1.05);
 }

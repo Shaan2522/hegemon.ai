@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT Clone</title>
+    <title>hegemony.ai</title>
     <script src="https://kit.fontawesome.com/72215895a8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/static/style.css">
 </head>
@@ -11,15 +11,12 @@
 <body>
     <div class="section">
         <ul class="section_item">
-            <p><a href="#">+new chat</a></p>
-            <p><a href="#">history</a></p>
-            <p><a href="#">discover</a></p>
-            <p><a href="#">profile</a></p>
+            <p style="color=white;"><a href="#" onclick="confirmNewChat()">+new chat</a></p>
         </ul>
     </div>
     <div class="container">
         <main class="chat-area" id="chat-area">
-            <div class="message_bot">hey! hegemon here.. the descendent of the greek gods ;)<br>nvm, ama..</div>
+            <div class="message_bot">hey! hegemon here.. descendent of the greek gods ;)<br>nvm, ask me anything..</div>
         </main>
         <footer class="input-area">
             <input type="text" id="user-input" placeholder="Message Hegemon">
@@ -70,6 +67,19 @@
             chatArea.appendChild(messageContainer);
             chatArea.scrollTop = chatArea.scrollHeight;
         }
+
+        function confirmNewChat() {
+            const confirmAction = confirm("This will delete the current chat session. Do you want to start a new chat?");
+            if (confirmAction) {
+                window.location.href = '/index';
+            }
+        }
+
+        window.addEventListener('beforeunload', function (e) {
+            const confirmationMessage = "This will delete the current chat session. Do you want to leave?";
+            e.returnValue = confirmationMessage; // For most browsers
+            return confirmationMessage; // For some other browsers
+        });
     </script>
 </body>
 </html>

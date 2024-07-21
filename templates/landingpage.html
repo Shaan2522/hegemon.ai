@@ -12,7 +12,7 @@
 
 <div class="container" style="background-image: url('/static/hegemon_image.jpeg'); background-repeat: no-repeat; background-size: 50%;">
     <div class="header">hi, i'm hegemon</div>
-    <div class="subheader">your personal assistant for<br>history | geopolitics | international relations | economy | defence </div>
+    <div class="subheader">your personal assistant for<br>defence | economy | international relations | geopolitics | history</div>
     <footer>
         <button class="round-button" onclick="openModal()">Get Started</button>
     </footer>
@@ -21,16 +21,16 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Login or Sign Up</h2>
-        <form id="loginForm" onsubmit="redirectToIndex(event)">
+        <form id="loginForm" onsubmit="redirectToIndex(event)"><br>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br>
-            <button type="submit">Login</button>
-            <button type="button" onclick="signup()">Sign Up</button>
+            <button type="submit"><b>Login<b></button>
         </form>
+        <p>*This is a pilot project.<br>*Please use any random ID and password to log in to the website.</p>
     </div>
+    
 </div>
 
 <script>
