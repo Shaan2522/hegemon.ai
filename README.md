@@ -1,4 +1,4 @@
-# hegemony.ai
+# hegemon.ai
 chatbot specifically curated for exploring history, geopolitics, international affairs, economy and related fields.
 
 **Repository Structure**
