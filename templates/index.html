@@ -29,55 +29,39 @@
             <button type="submit"><b>Login<b></button>
         </form>
         <div class="counter">
-            <div class="website-counter-text" style="color: white; text-align:center; background-color: #430f58; padding: 5.2px;">You were the visitor number # </div>
-            <div class="website-counter" style="background-color: #430f58;">"</div>
+            <div class="website-counter-text" style="color: white; text-align:center; background-color: #430f58; padding: 5.2px;">You are visitor number # </div>
+            <div class="website-counter" style="background-color: #430f58;">{{ visitor_count }}</div>
         </div>
         <p>*This is a Pilot Project.<br>*Please use any random ID and password to log in to the website.</p>
     </div>
-
-    
 </div>
 
-    <script>
-        function openModal() {
-            document.getElementById('myModal').style.display = 'block';
-        }
+<script>
+    function openModal() {
+        document.getElementById('myModal').style.display = 'block';
+    }
 
-        function closeModal() {
-            document.getElementById('myModal').style.display = 'none';
-        }
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
 
-        function signup() {
-            document.getElementById('loginForm').action = '/signup';
-            document.getElementById('loginForm').submit();
-        }
+    function signup() {
+        document.getElementById('loginForm').action = '/signup';
+        document.getElementById('loginForm').submit();
+    }
 
-        function redirectToIndex(event) {
-            event.preventDefault();
-            window.location.href = '/chat_page';
-        }
+    function redirectToIndex(event) {
+        event.preventDefault();
+        window.location.href = '/chat_page';
+    }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('myModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
+    window.onclick = function(event) {
+        const modal = document.getElementById('myModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
         }
-
-        var counterContainer = document.querySelector(".website-counter");
-        var resetButton = document.querySelector("#reset");
-        var visitCount = localStorage.getItem("page_view");
-
-        // Check if page_view entry is present
-        if (visitCount) {
-        visitCount = Number(visitCount) + 1;
-        localStorage.setItem("page_view", visitCount);
-        } else {
-        visitCount = 1;
-        localStorage.setItem("page_view", 1);
-        }
-        counterContainer.innerHTML = visitCount;
-    </script>
+    }
+</script>
 </body>
 
 <style>

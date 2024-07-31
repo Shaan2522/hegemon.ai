@@ -1,11 +1,30 @@
 from flask import Flask, request, render_template, jsonify
 import hegemon_chatbot as hegemon_chatbot
+import os
 
 app = Flask(__name__)
 
+counter_file_path = 'visitor_count.txt'
+
+def get_visitor_count():
+    if not os.path.exists(counter_file_path):
+        with open(counter_file_path, 'w') as file:
+            file.write('0')
+    with open(counter_file_path, 'r') as file:
+        count = int(file.read())
+    return count
+
+def increment_visitor_count():
+    count = get_visitor_count()
+    count += 1
+    with open(counter_file_path, 'w') as file:
+        file.write(str(count))
+    return count
+
 @app.route('/')
 def landing():
-    return render_template('index.html')
+    visitor_count = increment_visitor_count()
+    return render_template('index.html', visitor_count=visitor_count)
 
 @app.route('/chat_page')
 def chat_page():
