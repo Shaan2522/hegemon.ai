@@ -1,0 +1,7 @@
+# ignore enitre folders below
+__pycache__/
+venv/
+
+# ignore the dotenv file
+*.env
+*visitor_count.txt

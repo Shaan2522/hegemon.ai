@@ -12,3 +12,5 @@ chatbot specifically curated for exploring history, geopolitics, international a
         index.html
     app.py
     hegemon_chatbot.py
+    requirements.txt
+    
