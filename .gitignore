@@ -4,4 +4,6 @@ venv/
 
 # ignore the dotenv file
 *.env
-*visitor_count.txt
+
+# ignore vistor_count file
+visitor_count.txt
